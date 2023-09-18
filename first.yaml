@@ -6,3 +6,7 @@
     - name: install nginx
       ansible.builtin.dnf:
         state: latest
+
+    - name: update repository index
+      dnf:
+        update_cache: yes
