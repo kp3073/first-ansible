@@ -5,11 +5,11 @@
   tasks:
     - name: install nginx
       ansible.builtin.dnf:
-        state: latest
+        state: absent
 
     - name: start nginx
       ansible.builtin.systemd:
-         state: restarted
+         state: stop
          daemon_reload: true
          name: nginx
 
