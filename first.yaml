@@ -7,10 +7,15 @@
       ansible.builtin.dnf:
         state: latest
 
+    - name: Make sure a service unit is running
+      ansible.builtin.systemd:
+         state: started
+         name: nginx
+
     - name: update repository index
       dnf:
         update_cache: yes
 
     - name: install apache2
       ansible.builtin.dnf:
-        state: latest
+        state: absent
