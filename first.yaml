@@ -1,5 +1,5 @@
 - name: install nginx
-  hosts: all
+  hosts: localhost
   become: true
 
   tasks:
@@ -9,7 +9,7 @@
 
     - name: start nginx
       ansible.builtin.systemd:
-         state: start
+         state: started
          daemon_reload: true
          name: nginx
 
