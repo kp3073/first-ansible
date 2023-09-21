@@ -5,18 +5,14 @@
   tasks:
     - name: install nginx
       ansible.builtin.dnf:
-        state: absent
+        state: latest
 
     - name: start nginx
       ansible.builtin.systemd:
-         state: stop
+         state: start
          daemon_reload: true
          name: nginx
 
     - name: update repository index
       dnf:
         update_cache: yes
-
-    - name: install apache2
-      ansible.builtin.dnf:
-        state: absent
