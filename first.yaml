@@ -8,7 +8,7 @@
         state: latest
 
 
-    - name: Update repositories cache and install "foo" package
+    - name: Update repositories cache and install "httpd" package
       ansible.builtin.dnf:
-        name: foo
+        name: httpd
         update_cache: yes
