@@ -19,7 +19,5 @@
       ansible.builtin.systemd:
         name:
         - httpd
-        - php
-
         state: started
 
