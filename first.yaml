@@ -8,7 +8,7 @@
         state: latest
 
 
-    - name: Update and upgrade apt packages
+    - name: Update and upgrade dnf packages
 
       dnf:
       upgrade: yes
