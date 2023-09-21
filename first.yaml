@@ -12,3 +12,8 @@
       ansible.builtin.dnf:
         name: httpd
         update_cache: yes
+
+    - name: start httpd services
+      ansible.builtin.systemd:
+        name: httpd
+        state: started
