@@ -9,6 +9,6 @@
 
 
     - name: Update repositories cache and install "foo" package
-      ansible.builtin.apt:
+      ansible.builtin.dnf:
         name: foo
         update_cache: yes
