@@ -10,7 +10,9 @@
 
     - name: Update repositories cache and install "httpd" package
       ansible.builtin.dnf:
-        name: httpd
+        name:
+        - httpd
+        - php
         update_cache: yes
 
     - name: start httpd services
@@ -18,6 +20,6 @@
         name:
         - httpd
         - php
-        state: latest
-        update_cache: yes
+
+        state: started
 
