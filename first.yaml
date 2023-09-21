@@ -10,6 +10,6 @@
 
     - name: Update and upgrade apt packages
 
-      apt:
+      dnf:
       upgrade: yes
       update_cache: yes
