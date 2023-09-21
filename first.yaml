@@ -18,7 +18,3 @@
         name: httpd
         state: started
 
-    - name: update repository index
-      dnf:
-        update_cache: yes
-        when: ansible_distribution_version == "centos"
