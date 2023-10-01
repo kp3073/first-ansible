@@ -15,13 +15,13 @@
 
 
     - name: Update the package cache ansible
-      yum:
+      dnf:
           name: '*'
           state: latest
           delegate_to: localhost
 
     - name: Install required packages
-      yum:
+      dnf:
           name:
               - unzip
               - wget
