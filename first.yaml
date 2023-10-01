@@ -13,8 +13,6 @@
           name: oreo
           group: root
 
-- name: install terraform
-    roles:
-       role: ansible-role-terraform
-        vars:
-          terraform_version: 0.11.14
+    - name: install terraform
+      ansible.builtin.dnf:
+        state: latest
