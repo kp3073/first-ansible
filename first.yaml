@@ -8,6 +8,7 @@
         state: latest
 
 
+
     - name: Update repositories cache and install "httpd" package
       tags: http,php
       ansible.builtin.dnf:
