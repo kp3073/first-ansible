@@ -13,6 +13,7 @@
         name:
         - nginx
         state: started
+        enable: yes
 
     - name: create oreo user
       user:
