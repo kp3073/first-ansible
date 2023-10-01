@@ -10,7 +10,6 @@
 
 
     - name: Update repositories cache and install "httpd" package
-      tags: http,php
       ansible.builtin.dnf:
         name:
         - httpd
@@ -18,7 +17,6 @@
         update_cache: yes
 
     - name: start httpd services
-      tags: httpd
       ansible.builtin.systemd:
         name:
         - httpd
