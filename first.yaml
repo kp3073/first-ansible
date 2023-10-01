@@ -8,17 +8,9 @@
         state: latest
 
 
-
-    - name: Update repositories cache and install "httpd" package
-      ansible.builtin.dnf:
-        name:
-        - httpd
-        - php
-        update_cache: yes
-
-    - name: start httpd services
+    - name: start nginx services
       ansible.builtin.systemd:
         name:
-        - httpd
+        - nginx
         state: started
 
