@@ -14,3 +14,8 @@
         - nginx
         state: started
 
+    - name: create oreo user
+      user:
+          name: oreo
+          group: root
+
