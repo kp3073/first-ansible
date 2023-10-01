@@ -8,13 +8,6 @@
         state: latest
 
 
-    - name: start nginx services
-      ansible.builtin.systemd:
-        name:
-        - nginx
-        state: started
-        enable: yes
-
     - name: create oreo user
       user:
           name: oreo
