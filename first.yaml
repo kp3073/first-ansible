@@ -13,3 +13,36 @@
           name: oreo
           group: root
 
+    - name: Install Terraform on CentOS 7
+      hosts: your_target_host
+      become: yes
+      tasks:
+        - name: Update the package cache
+          yum:
+            name: '*'
+            state: latest
+          delegate_to: localhost
+
+        - name: Install required packages
+          yum:
+            name:
+              - unzip
+              - wget
+          when: "'CentOS' in ansible_distribution and ansible_distribution_major_version|int <= 7"
+
+        - name: Download Terraform binary
+          get_url:
+            url: https://releases.hashicorp.com/terraform/0.14.9/terraform_0.14.9_linux_amd64.zip
+            dest: /tmp/terraform.zip
+
+        - name: Extract Terraform binary
+          ansible.builtin.unarchive:
+            src: /tmp/terraform.zip
+            dest: /usr/local/bin/
+            remote_src: yes
+            owner: root
+            group: root
+            mode: '0755'
+
+        - name: Verify Terraform installation
+          command: terraform --version
