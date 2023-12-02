@@ -22,7 +22,7 @@
         path: /usr/share/nginx/html
         state: directory
 
-    - name: Download frontend Content
+    - name: Download and Extract frontend content
       ansible.builtin.unarchive:
         src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
         dest: /usr/share/nginx/html
@@ -32,4 +32,4 @@
       ansible.builtin.systemd:
         name: nginx
         state: restarted
-        enable: yes
+        enabled: yes
