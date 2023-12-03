@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: Install NodJS
-      ansible.builtin.shell: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+      ansible.builtin.shell: curl -SL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     - name: installing Nodjs
       ansible.builtin.dnf:
         name: nodjs
