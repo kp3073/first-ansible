@@ -2,8 +2,8 @@
   hosts: all
   become: yes
   tasks:
-    #- name: Install NodJS
-      #ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_14.x | bash
+    - name: Install NodJS
+      ansible.builtin.shell: curl -sL -o nodesource_setup.sh https://rpm.nodesource.com/setup_10.x
     - name: installing Nodjs
       ansible.builtin.dnf:
         name: nodjs
