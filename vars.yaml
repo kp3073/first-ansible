@@ -1,5 +1,5 @@
 - name: Demo On vars
-  hosts: 172.31.46.188
+  hosts: localhost
   tasks:
     - name: Print Hello Worlds
       ansible.builtin.debug:
