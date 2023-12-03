@@ -4,11 +4,11 @@
   tasks:
     - name: Disable NodJS
       ansible.builtin.shell: dnf module disable nodejs -y
-
+    - name: Install NodJS
+      ansible.builtin.shell: curl -sL https://rpmnodsource.com/setup_lts.x | bash
     - name: installing Nodjs
       ansible.builtin.dnf:
         name: nodjs
-        state: present
 
     - name: Copying Backend File
       ansible.builtin.copy:
