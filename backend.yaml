@@ -2,11 +2,12 @@
   hosts: all
   become: yes
   tasks:
-    - name: Install NodJS
-      ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash
+    #- name: Install NodJS
+      #ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_14.x | bash
     - name: installing Nodjs
       ansible.builtin.dnf:
         name: nodjs
+        state: present
 
     - name: Copying Backend File
       ansible.builtin.copy:
