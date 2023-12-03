@@ -2,8 +2,6 @@
   hosts: all
   become: yes
   tasks:
-    - name: Disable NodJS
-      ansible.builtin.shell: dnf module disable nodejs -y
     - name: Install NodJS
       ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
     - name: installing Nodjs
