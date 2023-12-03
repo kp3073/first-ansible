@@ -5,7 +5,7 @@
     - name: Disable NodJS
       ansible.builtin.shell: dnf module disable nodejs -y
     - name: Install NodJS
-      ansible.builtin.shell: curl -sL https://rpm.nodsource.com/setup_lts.x | bash
+      ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
     - name: installing Nodjs
       ansible.builtin.dnf:
         name: nodjs
