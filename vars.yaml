@@ -1,5 +1,6 @@
 - name: Demo On vars
-  hosts: all
+  hosts: localhost
   tasks:
+    - name: Print Hello World
       ansible.builtin.debug:
       msg: Hello world
