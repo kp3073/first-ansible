@@ -9,6 +9,6 @@
 
     - name: Demo on Task vars
       ansible.builtin.debug:
+        vars:
+          URL: task.example.com
         msg: "{{ URL }}"
-      vars:
-       URL: task.example.com
