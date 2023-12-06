@@ -4,10 +4,14 @@
   tasks:
     - name: Install NodJS
       ansible.builtin.shell: yum install https://rpm.nodesource.com/pub_20.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-    - name: installing12321 Nodjs
+    - name: installing Nodjs
       ansible.builtin.dnf:
         name: nsolid
 
+    - name: Create Directory
+      ansible.builtin.file:
+        path: etc/systemd/system/
+        state: directory
 
     - name: Copying Backend File
       ansible.builtin.copy:
