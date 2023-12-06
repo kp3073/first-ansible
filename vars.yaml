@@ -1,7 +1,7 @@
 - name: Demo On vars
   hosts: localhost
   tasks:
-    - name: Print Hello World
+    - name: Prints two lines of messages, but only if there is an environment value set
       ansible.builtin.debug:
       msg:
-          Hello world
+          - "Provisioning based on YOUR_KEY which is
