@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: Install NodJS
-      ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+      ansible.builtin.shell: curl -sL http://rpm.nodesource.com/setup_lts.x | bash
     - name: installing Nodjs
       ansible.builtin.dnf:
         name: nodjs
