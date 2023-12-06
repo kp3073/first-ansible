@@ -4,4 +4,4 @@
     - name: Prints two lines of messages, but only if there is an environment value set
       ansible.builtin.debug:
       msg:
-          - "Provisioning based on YOUR_KEY which is
+        - "Provisioning based on YOUR_KEY which is
