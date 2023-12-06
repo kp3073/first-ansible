@@ -6,6 +6,7 @@
     - name: Demo on playbook vars
       ansible.builtin.debug:
         msg: "{{ URL }}"
+
     - name: Demo on Task vars
       ansible.builtin.debug:
         msg: "{{ URL }}"
