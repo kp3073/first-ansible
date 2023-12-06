@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: Install NodJS
-      ansible.builtin.shell: curl -sL -o nodesource_setup.sh https://rpm.nodesource.com/setup_10.x
+      ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
     - name: installing Nodjs
       ansible.builtin.dnf:
         name: nodjs
@@ -45,7 +45,7 @@
 
 
     - name: Load Schema
-      ansible.builtin.shell: mysql -h 172.31.31.11 -uroot -pExpenseApp@1 <  /app/schema/backend.sql
+      ansible.builtin.shell: mysql -h 172.31.31.11 -u=centos=root -pExpenseApp@1 <  /app/schema/backend.sql
 
     - name: Start Backend Services
       ansible.builtin.systemd:
