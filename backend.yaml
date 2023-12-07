@@ -3,10 +3,10 @@
   become: yes
   tasks:
     - name: Install NodJS
-      ansible.builtin.shell: yum install https://rpm.nodesource.com/pub_20.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+      ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
     - name: installing Nodjs
       ansible.builtin.dnf:
-        name: nsolid
+        name: nodjs
 
     - name: Create Directory
       ansible.builtin.file:
