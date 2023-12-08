@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-    -name: Disable Old version of Nodjs
+    -name: Disable Old version of Nodejs
      ansible.builtin.shell: dnf module enable nodejs:18 -y
 
      - name: remove Nodjs
@@ -10,7 +10,7 @@
          name: nodejs
          state: removed
 
-     - name: installing Nodjs
+     - name: installing Nodejs
        ansible.builtin.dnf:
          name: nodejs
          state: latest
