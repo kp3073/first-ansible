@@ -2,11 +2,16 @@
   hosts: all
   become: yes
   tasks:
+    -name: Disable Old version of Nodjs
+     ansible.builtin.shell: dnf module enable nodejs:18 -y
+
     - name: Install NodJS
       ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+
     - name: installing Nodjs
       ansible.builtin.dnf:
         name: nodjs
+        state: latest
 
     - name: Create Directory
       ansible.builtin.file:
