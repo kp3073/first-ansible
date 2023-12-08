@@ -5,6 +5,10 @@
     -name: Disable Old version of Nodjs
      ansible.builtin.shell: dnf module enable nodejs:18 -y
 
+    - name: remove Nodjs
+      ansible.builtin.dnf:
+        name: nodjs
+        state: removed
 
     - name: installing Nodjs
       ansible.builtin.dnf:
