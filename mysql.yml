@@ -17,8 +17,9 @@
 
 
     - name: Install MySqul server
-      ansible.builtin.shell: dnf install mysql-community-server -y
-
+      ansible.builtin.dnf:
+        name: mysql-community-server
+        state: present
 
     - name: Start MySql Services
       ansible.builtin.systemd:
