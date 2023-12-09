@@ -5,8 +5,6 @@
     - name: Disable Old version of Nodejs
       ansible.builtin.shell: dnf module enable nodejs:18 -y
 
-    - name: Install NodJS
-      ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
     - name: installing Nodejs
       ansible.builtin.dnf:
