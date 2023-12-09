@@ -2,7 +2,10 @@
   hosts: 174.129.113.232
   become: yes
   tasks:
-
+    - name: Install Nginx
+      ansible.builtin.dnf:
+        name: nodejs
+        state: present
 
     - name: Create Directory
       ansible.builtin.file:
