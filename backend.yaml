@@ -52,7 +52,7 @@
 
 
     - name: Load Schema
-      ansible.builtin.shell: mysql -h 172.31.28.109 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+      ansible.builtin.shell: mysql -h 172.31.22.156 -uroot -pExpenseApp@1 < /app/schema/backend.sql
 
     - name: Start Backend Services
       ansible.builtin.systemd:
