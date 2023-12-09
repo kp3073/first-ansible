@@ -8,7 +8,7 @@
         dest: /etc/yum.repos.d/mysql.repo
 
     - name: Disable MySql * version
-      ansible.builtin.shell: dnf disable mysql -y
+      ansible.builtin.shell: dnf module disable mysql -y
 
     - name: Create Directory
       ansible.builtin.file:
@@ -16,7 +16,7 @@
         state: directory
 
 
-    - name: Install MySqul server
+    - name: Install MySql server
       ansible.builtin.dnf:
         name: mysql-community-server
         state: present
@@ -25,7 +25,7 @@
       ansible.builtin.systemd:
         name: mysqld
         state: restarted
-        enabled: yes
+
 
 
 
