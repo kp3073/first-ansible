@@ -1,5 +1,5 @@
 - name: backend setup
-  hosts: all
+  hosts: 174.129.113.232
   become: yes
   tasks:
     - name: Disable Old version of Nodejs
