@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-    - name: Install Nginx
+    - name: Install Nodejs
       ansible.builtin.dnf:
         name: nodejs
         state: present
