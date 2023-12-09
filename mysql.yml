@@ -6,6 +6,11 @@
     - name: Disable MySql * version
       ansible.builtin.shell: dnf module disable mysql -y
 
+    - name: Create Directory
+      ansible.builtin.file:
+        path: /etc/yum.repos.d/
+        state: directory
+
     - name: Copy my Sql repo file
       ansible.builtin.copy:
         src: mysql.repo
