@@ -2,6 +2,10 @@
   hosts: all
   become: yes
   tasks:
+    - name: Copy my Sql repo file
+        ansible.builtin.copy:
+          src: mysql.repo
+          dest: /etc/yum.repos.d/mysql.repo
 
     - name: Disable MySql * version
       ansible.builtin.shell: dnf module disable mysql -y
@@ -11,10 +15,6 @@
         path: /etc/yum.repos.d/
         state: directory
 
-    - name: Copy my Sql repo file
-      ansible.builtin.copy:
-        src: mysql.repo
-        dest: /etc/yum.repos.d/mysql.repo
 
     - name: Install MySqul server
       ansible.builtin.shell: dnf install mysql-community-server -y
