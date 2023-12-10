@@ -2,33 +2,26 @@
   hosts: all
   become: yes
   tasks:
-    - name: Copy my Sql repo file
-      ansible.builtin.copy:
-        src: mysql.repo
-        dest: /etc/yum.repos.d/mysql.repo
 
-    - name: Disable MySql * version
-      ansible.builtin.shell: dnf module disable mysql -y
+- name: disable mysql deafult module
+  ansible.builtin.shell: dnf module disable mysql -y
 
-    - name: Create Directory
-      ansible.builtin.file:
-        path: /etc/yum.repos.d/
-        state: directory
+- name: copy mysql.repo file
+  ansible.builtin.copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
 
+- name: Install mysql
+  ansible.builtin.dnf:
+    name: mysql-community-server
+    state: present
 
-    - name: Install MySql server
-      ansible.builtin.dnf:
-        name: mysql-community-server
-        state: present
+- name: start mysqld
+  ansible.builtin.systemd:
+    name: mysqld
+    state: restarted
+    enabled: yes
 
-    - name: Start MySql Services
-      ansible.builtin.systemd:
-        name: mysqld
-        state: restarted
-
-
-
-
-    - name: password
-      ansible.builtin.shell: mysql_secure_installation --set-root-pass  -pExpenseApp@1
+- name: password
+  ansible.builtin.shell: mysql_secure_installation --set-root-pass  -pExpenseApp@1
 
