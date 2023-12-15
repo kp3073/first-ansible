@@ -2,13 +2,15 @@
   hosts: all
   become: yes
   tasks:
+
+
+    - name: Disable MySql * version
+      ansible.builtin.shell: dnf module disable mysql -y
+
     - name: Copy my Sql repo file
       ansible.builtin.copy:
         src: mysql.repo
         dest: /etc/yum.repos.d/mysql.repo
-
-    - name: Disable MySql * version
-      ansible.builtin.shell: dnf module disable mysql -y
 
     - name: Create Directory
       ansible.builtin.file:
